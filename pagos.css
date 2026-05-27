@@ -383,22 +383,46 @@ body {
 }
 
 /* --- Footer --- */
-.footer {
+/* .footer {
     background-color: var(--dark-blue);
     color: white;
     padding: 20px 0;
     margin-top: 40px;
     font-size: 11px;
     border-top: 5px solid var(--primary-blue);
+} */
+
+.footer {
+    background-color: #001f38;
+    /* Azul oscuro característico de la interfaz */
+    color: #ffffff;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 11px;
+    border-top: 5px solid #0A3A60;
+    /* Línea decorativa azul superior */
 }
 
-.footer-container {
+/* .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+} */
+/* Contenedor interno: distribuye los logos a la izquierda y el texto a la derecha */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    /* Empuja los elementos a los extremos */
+    align-items: center;
+    /* Centrado vertical perfecto */
+    flex-wrap: wrap;
+    /* Permite que baje el texto si no hay espacio */
+    gap: 20px;
+    /* Margen de seguridad entre bloques */
 }
+
 
 .vigilado {
     border: 1px solid white;
@@ -409,7 +433,91 @@ body {
 
 .footer-logos {
     display: flex;
-    gap: 15px;
+    align-items: center;
+    gap: 20px;
+    /* Separación horizontal uniforme entre los 3 logos */
+    flex-wrap: wrap;
+}
+
+/* Estilo unificado y responsivo para las 3 imágenes */
+.footer-logos img {
+    width: auto;
+    height: auto;
+    max-height: 50%;
+    /* Altura máxima para que mantengan la misma línea visual */
+    max-width:50%;
+    /* Ancho máximo de seguridad (~150px) */
+    object-fit: contain;
+    /* Evita distorsiones en logos cuadrados o rectangulares */
+    border: none;
+    background: transparent;
+}
+
+/* Ajuste específico por si el logo de Vigilado es muy horizontal o diferente */
+.footer-logos img[alt*="vigilado"] {
+    max-height: 30px;
+    /* Suele ser más plano, un text-logo pequeño */
+}
+
+/* --- BLOQUE DE TEXTO (DERECHA) --- */
+.footer-right {
+    text-align: right;
+    color: rgba(255, 255, 255, 0.8);
+    /* Blanco suavizado para legibilidad */
+    line-height: 1.4;
+}
+
+.footer-right strong {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+
+    /* En tablets y celulares, centramos todo verticalmente */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .footer-logos {
+        justify-content: center;
+        /* Centra los logos en la pantalla móvil */
+        gap: 15px;
+    }
+
+    .footer-right {
+        text-align: center;
+        /* Centra el texto de copyright */
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Ajuste extra para celulares muy pequeños */
+    .footer-logos {
+        gap: 12px;
+    }
+
+    .footer-logos img {
+        max-height: 32px;
+        /* Reducimos ligeramente los logos para que no saturen */
+    }
+}
+
+/* --- Adaptación estricta para pantallas muy pequeñas (Móviles de menos de 480px) --- */
+@media (max-width: 480px) {
+    .footer-logos {
+        flex-direction: column;
+        /* Pone las imágenes una debajo de la otra en celulares */
+        gap: 15px;
+        /* Reduce un poco el espacio entre ellas */
+    }
+
+    .footer-img {
+        max-width: 120px;
+        /* Las hace ligeramente más pequeñas en pantallas muy reducidas */
+    }
 }
 
 .ach-logo,
