@@ -1,0 +1,283 @@
+/* --- Variables de Diseño Oficiales --- */
+:root {
+    --dark-navy: #001f3d;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent-purple: #6366f1;
+    --border-color: #cbd5e1;
+    --button-disabled: #cbd5e1;
+    --button-disabled-text: #94a3b8;
+    --button-active: #001f3d; 
+}
+
+/* --- Estilos Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Layout Split (Pantalla Dividida) */
+.split-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* ==========================================================================
+   PANEL IZQUIERDO (Banner e Imagen Corporativa)
+   ========================================================================== */
+.left-panel {
+    display: grid;
+    background-color: var(--dark-navy);
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.brand-group {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 500px;
+}
+
+.main-logo-white {
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+}
+
+.divider-line {
+    width: 1px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.palomma-announcement {
+    color: #ffffff;
+}
+
+.palomma-logo-text {
+    font-size: 11px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.palomma-announcement p {
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+.bottom-team-image {
+    width: 100%;
+    height: 100%;
+}
+
+.bottom-team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* ==========================================================================
+   PANEL DERECHO (Formulario de Login)
+   ========================================================================== */
+.right-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center-logo-container {
+    margin-bottom: 40px;
+}
+
+.color-logo {
+    width: 140px;
+    height: auto;
+}
+
+/* Textos */
+.welcome-text {
+    text-align: center;
+    margin-bottom: 35px;
+    width: 100%;
+}
+
+.welcome-text h1 {
+    font-size: 26px;
+    color: var(--dark-navy);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.welcome-text .subtitle {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+.welcome-text h2 {
+    font-size: 18px;
+    color: var(--dark-navy);
+    font-weight: 500;
+}
+
+/* Formulario e Inputs */
+form {
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    transition: border-color 0.2s;
+}
+
+.input-group:focus-within {
+    border-color: var(--dark-navy);
+    box-shadow: 0 0 0 1px var(--dark-navy);
+}
+
+.input-icon-box {
+    width: 50px;
+    height: 100%;
+    background-color: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    border-right: 1px solid var(--border-color);
+}
+
+.input-group input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 16px;
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+.input-group input::placeholder {
+    color: #94a3b8;
+}
+
+/* Botón Primario */
+.btn-primary {
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    cursor: not-allowed;
+    background-color: var(--button-disabled);
+    color: var(--button-disabled-text);
+    transition: all 0.2s ease;
+}
+
+.btn-primary.active {
+    background-color: var(--button-active);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.btn-primary.active:hover {
+    opacity: 0.95;
+}
+
+/* Footer del Login */
+.login-footer {
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.security-provider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #4c1d95; /* Color morado Palomma */
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-links a {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--dark-navy);
+}
+
+/* ==========================================================================
+   RESPONSIVIDAD (Media Query para Mobile)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .split-container {
+        grid-template-columns: 1fr; /* Una sola columna en dispositivos móviles */
+    }
+
+    .left-panel {
+        display: none; /* Oculta por completo la sección del equipo y banner azul */
+    }
+
+    .right-panel {
+        padding: 24px;
+    }
+
+    .login-box {
+        max-width: 100%;
+    }
+
+    .welcome-text h1 {
+        font-size: 28px;
+    }
+}

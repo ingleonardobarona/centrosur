@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Sur Inmobiliaria - Sistema de Recaudos</title>
+    <link rel="stylesheet" href="arriendos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="split-container">
+
+        <aside class="left-panel">        
+            <div class="bottom-team-image">
+                <img src="./pagos_paloma_files/centrosur-dashboard.png" alt="Equipo Centro Sur">
+            </div>
+        </aside>
+
+        <main class="right-panel">
+            <div class="login-box">
+
+                <div class="center-logo-container">
+                    <img src="./pagos_paloma_files/centrosur-fondo-blanco.png" alt="Centro Sur Inmobiliaria" class="color-logo">
+                </div>
+
+                <div class="welcome-text">
+                    <h1>Bienvenido al Sistema de Recaudos</h1>
+                    <p class="subtitle">Realiza pagos de manera segura</p>
+                    <h2>Validación de usuario</h2>
+                </div>
+
+                <form id="loginForm">
+                    <div class="input-group">
+                        <div class="input-icon-box">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <input type="text" id="documentNumber" placeholder="Número de documento" required
+                            inputmode="numeric" pattern="[0-9]+" autocomplete="off">
+                    </div>
+
+                    <button type="submit" id="btnSubmit" class="btn-primary" disabled>
+                        INICIAR SESIÓN
+                    </button>
+                </form>
+
+                <footer class="login-footer">
+                    <div class="security-provider">
+                        <span class="palomma-heart-icon">💜</span>
+                        <p>Pagos seguros por <strong>Palomma</strong></p>
+                    </div>
+                    <div class="footer-links">
+                        <a href="https://www.palomma.com/terminos-condiciones">Términos y condiciones</a>
+                        <a href="https://www.palomma.com/politicas-de-privacidad">Políticas de privacidad</a>
+                    </div>
+                </footer>
+
+            </div>
+        </main>
+
+    </div>
+
+    <script src="arriendos.js"></script>
+</body>
+
+</html>
